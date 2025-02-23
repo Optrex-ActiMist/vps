@@ -11,7 +11,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/get
 - 安装 acme.sh 并使用Letsencrypt申请证书
 ```
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/getssl_byacme.sh)
-
+```
 
 ### 3. 安装gost
 ```
