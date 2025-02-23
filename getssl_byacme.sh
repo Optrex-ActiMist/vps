@@ -16,6 +16,9 @@ else
     echo "curl 已安装，继续执行..."
 fi
 
+# 更新 apt 软件包列表
+sudo apt update
+
 # 执行安装 acme.sh
 curl https://get.acme.sh | sh
 
