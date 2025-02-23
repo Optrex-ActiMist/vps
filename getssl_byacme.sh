@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# 更新包索引
+sudo apt update
+
 # 检查是否安装了 curl
 if ! command -v curl &> /dev/null; then
     echo "系统没有发现 curl 命令，是否立刻安装 curl？（输入 Y 确认，N 退出）"
@@ -16,20 +19,17 @@ else
     echo "curl 已安装，继续执行..."
 fi
 
-# 更新 apt 软件包列表
-sudo apt update
-
 # 执行安装 acme.sh
 curl https://get.acme.sh | sh
 
-# 刷新环境变量
-source ~/.bashrc
+# 定义 acme.sh 的完整路径
+ACME_PATH="/root/.acme.sh/acme.sh"
 
 # 安装 socat
 sudo apt-get update && sudo apt-get install -y socat
 
 # 设置默认 CA 为 Let's Encrypt
-acme.sh --set-default-ca --server letsencrypt
+"$ACME_PATH" --set-default-ca --server letsencrypt
 
 # 提示用户输入域名并执行证书申请
 echo "请输入已解析的域名（例如 example.com）："
@@ -39,6 +39,6 @@ if [ -z "$domain" ]; then
     exit 1
 else
     echo "正在为域名 $domain 申请证书..."
-    acme.sh --issue -d "$domain" --standalone
+    "$ACME_PATH" --issue -d "$domain" --standalone
     echo "脚本执行完成！请检查证书是否成功生成。"
 fi
