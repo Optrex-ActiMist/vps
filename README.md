@@ -8,7 +8,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/ins
 ```
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/getssl.sh)
 ```
-- 安装 acme.sh 并使用Letsencrypt申请证书
+- 安装 acme.sh 并使用 Letsencrypt 申请证书
 ```
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/getssl_byacme.sh)
 ```
