@@ -15,5 +15,5 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/get
 
 ### 3. 安装gost
 ```
-bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/gost.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/getssl_by_acme.sh)
 ```
