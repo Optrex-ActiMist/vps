@@ -1,14 +1,5 @@
 #!/bin/bash
 
-# 提示用户确认域名是否已解析到 VPS 的 IP 地址
-echo "请问您是否已经将域名解析至 VPS 的 IP 地址？"
-echo "请输入 'y' 确认，或者其他键退出："
-read answer
-if [ "$answer" != "y" ]; then
-    echo "脚本已退出，请先解析域名后再运行。"
-    exit 1
-fi
-
 # 更新 apt 软件包列表
 sudo apt update
 
