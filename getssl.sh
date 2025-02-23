@@ -24,9 +24,6 @@ sudo apt-get update
 # 安装 certbot
 sudo apt-get install certbot
 
-# 安装 certbot 的 nginx 插件
-apt install -y python3-certbot-nginx
-
 # 允许 80 端口 (HTTP)
 sudo iptables -I INPUT -p tcp --dport 80 -j ACCEPT
 
