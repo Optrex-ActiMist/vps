@@ -1,9 +1,9 @@
 # 新建VPS快捷运行脚本：
-1. 安装Docker和BBR
+### 1. 安装 Docker 和 BBR
 ```
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/installdocker_with_bbr.sh)
 ```
-2. 安装Cerbot并使用Letsencrypt申请ssl证书
+### 2. 安装 Cerbot 并使用 Letsencrypt 申请 ssl 证书
 ```
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/getssl.sh)
 ```
