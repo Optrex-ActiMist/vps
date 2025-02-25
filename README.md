@@ -33,4 +33,5 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/gos
 - 微软 Markitdown
 - PDF Math Translate [https://github.com/Byaidu/PDFMathTranslate]
 - Send [https://send.vis.ee/]
-- Stirling-PDF 
+- Stirling-PDF
+- invoify
