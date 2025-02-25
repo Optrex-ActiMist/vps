@@ -9,11 +9,11 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/ins
 ```
 
 ### 3. 申请 SSL 证书，以下二选一(若安装Nginx，这一步可省略)：
-  - 安装 Cerbot 并使用 Letsencrypt 申请证书
+##### 安装 Cerbot 并使用 Letsencrypt 申请证书
 ```
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/getssl.sh)
 ```
-- 安装 acme.sh 并使用 Letsencrypt 申请证书
+##### 安装 acme.sh 并使用 Letsencrypt 申请证书
 ```
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/getssl_byacme.sh)
 ```
@@ -23,14 +23,25 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/get
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/gost.sh)
 ```
 
-### 5. 安装 Nginx Proxy Manager，申请SSL证书
+### 5. 安装 Nginx Proxy Manager，申请SSL证书 
+```
+bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/install_NginxProxyManager.sh)
+```
+
+### 6. 安装 Portainer(docker管理工具)
+```
+bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/refs/heads/main/install_Portainer.sh)
+```
+
+### 7. 安装 Watchtower （自动更新 docker image）
+```
+bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/refs/heads/main/install_watchtower.sh)
+```
+
 
 ### 其它 Docker 镜像：
-- Portainer (docker管理工具)
 - deep-research-web-ui [https://github.com/AnotiaWang/deep-research-web-ui]
-- Watchtower （自动更新 docker image）
-- WordPress
-- 微软 Markitdown
 - PDF Math Translate [https://github.com/Byaidu/PDFMathTranslate]
+- WordPress
+- Markitdown
 - Stirling-PDF
-- invoify
