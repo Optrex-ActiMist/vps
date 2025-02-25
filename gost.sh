@@ -48,11 +48,4 @@ EOF
 chmod +x mygost.sh
 bash mygost.sh
 
-# 配置 crontab
-echo "配置 crontab 定时任务..."
-echo "0 0 1 * * /usr/bin/certbot renew --force-renewal" | crontab -l -u root | cat - > /tmp/crontab.tmp
-echo "5 0 1 * * /usr/bin/docker restart gost" | cat /tmp/crontab.tmp - > /tmp/crontab.new
-crontab /tmp/crontab.new
-rm /tmp/crontab.tmp /tmp/crontab.new
-
 echo "安装完成！Gost 已启动，定时任务已配置。"
