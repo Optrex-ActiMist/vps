@@ -8,7 +8,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/ins
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/install_docker_compose.sh)
 ```
 
-### 3. 申请 SSL 证书，以下二选一：
+### 3. 申请 SSL 证书，以下二选一(若安装Nginx，这一步可省略)：
   - 安装 Cerbot 并使用 Letsencrypt 申请证书
 ```
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/getssl.sh)
