@@ -33,6 +33,20 @@ else
     echo "socat 已安装，继续执行..."
 fi
 
+# 检查 ufw 是否安装并开放 80 端口
+if type ufw >/dev/null 2>&1; then
+    echo "检测到 ufw 防火墙，是否开放 80 端口？（输入 Y 确认，N 跳过）"
+    read -r answer
+    if [ "$answer" = "Y" ] || [ "$answer" = "y" ]; then
+        sudo ufw allow 80 || { echo "开放 80 端口失败，请手动检查"; }
+        echo "已开放 80 端口，继续执行..."
+    else
+        echo "用户选择不开放 80 端口，继续执行..."
+    fi
+else
+    echo "未检测到 ufw 防火墙，跳过防火墙配置..."
+fi
+
 # 安装 acme.sh 并检查是否成功
 echo "正在安装 acme.sh..."
 curl https://get.acme.sh | sh || { echo "acme.sh 安装失败，脚本退出"; exit 1; }
