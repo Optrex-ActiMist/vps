@@ -40,7 +40,7 @@ CERT=\${CERT_DIR}/live/\${DOMAIN}/fullchain.pem
 KEY=\${CERT_DIR}/live/\${DOMAIN}/privkey.pem
 sudo docker run -d --name gost \
     --restart unless-stopped \
-    -v /root/.acme.sh:/root/.acme.sh:ro \
+    -v ${CERT_DIR}:${CERT_DIR}:ro \
     --net=host \
     --log-opt max-size=10m \
     --log-opt max-file=3 \
