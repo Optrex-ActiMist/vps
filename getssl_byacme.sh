@@ -29,6 +29,9 @@ echo "正在安装 acme.sh..."
 curl https://get.acme.sh | sh || { echo "acme.sh 安装失败，脚本退出"; exit 1; }
 echo "acme.sh 安装完成。"
 
+# 注册邮箱
+acme.sh --register-account -m david.shilei@gmail.com
+
 # 动态获取 acme.sh 路径（默认安装在 ~/.acme.sh）
 ACME_PATH="$HOME/.acme.sh/acme.sh"
 if [ ! -f "$ACME_PATH" ]; then
