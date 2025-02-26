@@ -18,6 +18,12 @@ else
     echo "curl 已安装，继续执行..."
 fi
 
+# 安装 socat
+sudo apt-get update && sudo apt-get install -y socat
+
+打开 80 端口
+sudo iptables -I INPUT -p tcp --dport 80 -j ACCEPT
+
 # 安装 acme.sh 并检查是否成功
 echo "正在安装 acme.sh..."
 curl https://get.acme.sh | sh || { echo "acme.sh 安装失败，脚本退出"; exit 1; }
