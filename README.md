@@ -38,7 +38,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/refs/hea
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/refs/heads/main/install_watchtower.sh)
 ```
 
-### 8 安装 vocechat 
+### 8 安装 vocechat (https://doc.voce.chat/)
 ```
 # 运行容器
 docker run -d --restart=always \
