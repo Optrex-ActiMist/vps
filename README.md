@@ -38,6 +38,14 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/refs/hea
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/refs/heads/main/install_watchtower.sh)
 ```
 
+### 8 安装 vocechat 
+```
+# 运行容器
+docker run -d --restart=always \
+  -p 3001:3000 \ #3000 端口被deepsearch 占用，所以改为监听3001端口
+  --name vocechat-server \
+  privoce/vocechat-server:latest
+``` 
 
 ### 其它 Docker 镜像：
 - deep-research-web-ui [https://github.com/AnotiaWang/deep-research-web-ui]
