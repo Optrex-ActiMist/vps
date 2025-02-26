@@ -18,6 +18,14 @@ else
     echo "curl 已安装，继续执行..."
 fi
 
+# 更新软件包列表
+echo "正在更新软件包列表..."
+sudo apt update
+
+# 安装socat
+echo "正在安装socat..."
+sudo apt install socat -y
+
 # 安装 acme.sh 并检查是否成功
 echo "正在安装 acme.sh..."
 curl https://get.acme.sh | sh || { echo "acme.sh 安装失败，脚本退出"; exit 1; }
