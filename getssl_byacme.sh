@@ -18,13 +18,20 @@ else
     echo "curl 已安装，继续执行..."
 fi
 
-# 更新软件包列表
-echo "正在更新软件包列表..."
-sudo apt update
-
-# 安装socat
-echo "正在安装socat..."
-sudo apt install socat -y
+# 检查并安装 socat
+if ! type socat >/dev/null 2>&1; then
+    echo "未找到 socat，是否安装？（输入 Y 确认，N 退出）"
+    read -r answer
+    if [ "$answer" = "Y" ] || [ "$answer" = "y" ]; then
+        sudo apt install -y socat || { echo "安装 socat 失败，脚本退出"; exit 1; }
+        echo "socat 已安装，继续执行..."
+    else
+        echo "用户选择不安装 socat，脚本退出。"
+        exit 1
+    fi
+else
+    echo "socat 已安装，继续执行..."
+fi
 
 # 安装 acme.sh 并检查是否成功
 echo "正在安装 acme.sh..."
