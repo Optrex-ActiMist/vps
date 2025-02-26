@@ -19,9 +19,11 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/get
 ```
 
 ### 4. 安装 gost 
+##### 原版：
 ```
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/gostv1.sh)
 ```
+##### 改进版（加上h3支持及多路复用、提高并发）：
 ```
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/gostv2.sh)
 ```
