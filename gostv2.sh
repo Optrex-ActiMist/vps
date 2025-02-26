@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Check if Docker is installed
+if ! command -v docker &> /dev/null; then
+    echo "Docker is not installed. Please install Docker first."
+    exit 1
+fi
+
 # 询问用户是否开始使用 Docker 安装 Gost
 echo "请问您是否开始使用 Docker 安装 Gost？"
 echo "请输入 'y' 确认，或者其他键退出："
@@ -16,14 +22,32 @@ echo "请输入用户名："
 read USER
 echo "请输入密码："
 read PASS
+echo
 echo "请输入端口号（例如 443）："
 read PORT
+
+# Validate port number
+if ! [[ "$PORT" =~ ^[0-9]+$ ]] || [ "$PORT" -lt 1 ] || [ "$PORT" -gt 65535 ]; then
+    echo "错误：端口号必须是 1-65535 之间的数字。"
+    exit 1
+fi
 
 # 定义其他固定变量
 BIND_IP=0.0.0.0
 CERT_DIR=/etc/letsencrypt
 CERT=${CERT_DIR}/live/${DOMAIN}/fullchain.pem
 KEY=${CERT_DIR}/live/${DOMAIN}/privkey.pem
+
+# Check if certificate exists
+if [ ! -f "$CERT" ] || [ ! -f "$KEY" ]; then
+    echo "警告：证书文件不存在。请确保已经为 $DOMAIN 申请了 Let's Encrypt 证书。"
+    echo "是否继续？(y/n)"
+    read continue_answer
+    if [ "$continue_answer" != "y" ]; then
+        echo "脚本已退出。"
+        exit 1
+    fi
+fi
 
 # 创建 mygost.sh 文件
 cat << EOF > mygost.sh
@@ -40,18 +64,19 @@ CERT=\${CERT_DIR}/live/\${DOMAIN}/fullchain.pem
 KEY=\${CERT_DIR}/live/\${DOMAIN}/privkey.pem
 sudo docker run -d --name gost \
     --restart unless-stopped \
-    -v ${CERT_DIR}:${CERT_DIR}:ro \
+    -v \${CERT_DIR}:\${CERT_DIR}:ro \
     --net=host \
     --log-opt max-size=10m \
     --log-opt max-file=3 \
     gogost/gost:latest \
-    -L "http2://${USER}:${PASS}@${BIND_IP}:${PORT}?cert=${CERT}&key=${KEY}&probe_resist=file:/var/www/html/index.html&knock=www.google.com&mux=true&muxConcurrency=16&idle_timeout=15s&keepalive_period=120s&compression=true&nodelay=true" \
-    -L "h3://${USER}:${PASS}@${BIND_IP}:${PORT}?cert=${CERT}&key=${KEY}&probe_resist=file:/var/www/html/index.html&knock=www.google.com&mux=true&muxConcurrency=16&idle_timeout=15s&keepalive_period=120s&compression=true&nodelay=true"
+    -L "http2://\${USER}:\${PASS}@\${BIND_IP}:\${PORT}?cert=\${CERT}&key=\${KEY}&probe_resist=file:/var/www/html/index.html&knock=www.google.com&mux=true&muxConcurrency=32&idle_timeout=2592000s&keepalive_period=5s&fastOpen=true&compression=true&nodelay=true&congestion_control=bbr&tls13=true&reuse_port=true&tcp_fast_open_qlen=64&buffer_size=32768" \
+    -L "h3://\${USER}:\${PASS}@\${BIND_IP}:\${PORT}?cert=\${CERT}&key=\${KEY}&probe_resist=file:/var/www/html/index.html&knock=www.google.com&mux=true&muxConcurrency=32&idle_timeout=2592000s&keepalive_period=5s&fastOpen=true&compression=true&nodelay=true&congestion_control=bbr&tls13=true&reuse_port=true&tcp_fast_open_qlen=64&buffer_size=32768"
 EOF
 
 # 给 mygost.sh 添加执行权限并运行
 chmod +x mygost.sh
 bash mygost.sh
 
-
 echo "安装完成！Gost 已启动。"
+echo "您可以使用以下命令查看日志："
+echo "docker logs gost"
