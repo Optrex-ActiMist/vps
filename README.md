@@ -1,14 +1,9 @@
 # 新建VPS快捷运行脚本：
-### 1. 安装 Docker 和 BBR
+### 1. 安装 docker，docker-compose 和 BBR
 ```
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/installdocker_with_bbr.sh)
 ```
-### 2. 安装 Docker-compose 
-```
-bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/install_docker_compose.sh)
-```
-
-### 3. 申请 SSL 证书，以下二选一(若安装Nginx，这一步可省略)：
+### 2. 申请 SSL 证书，以下二选一(若安装Nginx，这一步可省略)：
 ##### - 安装 Cerbot 并使用 Letsencrypt standalone方式申请证书
 ```
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/getssl.sh)
@@ -18,7 +13,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/get
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/getssl_byacme.sh)
 ```
 
-### 4. 安装 gost 
+### 3. 安装 gost 
 ##### 原版：
 ```
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/gostv1.sh)
@@ -28,22 +23,22 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/gos
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/gostv2.sh)
 ```
 
-### 5. 安装 Nginx Proxy Manager，申请SSL证书 
+### 4. 安装 Nginx Proxy Manager，申请SSL证书 
 ```
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/install_NginxProxyManager.sh)
 ```
 
-### 6. 安装 Portainer(docker管理工具)
+### 5. 安装 Portainer(docker管理工具)
 ```
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/refs/heads/main/install_Portainer.sh)
 ```
 
-### 7. 安装 Watchtower （自动更新 docker image）
+### 6. 安装 Watchtower （自动更新 docker image）
 ```
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/refs/heads/main/install_watchtower.sh)
 ```
 
-### 8 安装 vocechat (https://doc.voce.chat/)
+### 7 安装 vocechat (https://doc.voce.chat/)
 ```
 # 运行容器
 docker run -d --restart=always \
