@@ -58,3 +58,7 @@ docker run -d --restart=always \
 - WordPress
 - Markitdown
 - Stirling-PDF
+
+### 其它工具
+- acme.sh (可以申请支持通配符的证书，自动续期)
+- 
