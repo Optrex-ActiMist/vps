@@ -13,12 +13,12 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/get
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/getssl_byacme.sh)
 ```
 
-### 3. 安装 gost 
+### 3. 安装 gost (须先使用Letsencrypt申请证书) 
 ##### 原版：
 ```
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/gostv1.sh)
 ```
-##### 改进版（加上h3支持及多路复用、提高并发）：
+##### 改进版(须先使用Letsencrypt申请证书)（加上h3支持及多路复用、提高并发）：
 ```
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/gostv2.sh)
 ```
