@@ -15,6 +15,9 @@ if [ "$answer" != "y" ]; then
     exit 1
 fi
 
+# 打开443 端口
+ufw allow 443
+
 # 提示用户输入变量
 echo "请输入您的域名（例如 example.com）："
 read DOMAIN
