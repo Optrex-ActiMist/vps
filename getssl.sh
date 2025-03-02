@@ -37,4 +37,4 @@ sudo netfilter-persistent save
 # 运行 certbot (standalone 模式)
 sudo certbot certonly --standalone
 
-echo "Certbot 安装完成！请按照 certbot 的提示完成证书申请。"
+echo "证书申请完成。请及时设置crontab定时续签证书"
