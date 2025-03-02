@@ -72,8 +72,7 @@ sudo docker run -d --name gost \
     --log-opt max-size=10m \
     --log-opt max-file=3 \
     gogost/gost:latest \
-    -L "http2://\${USER}:\${PASS}@\${BIND_IP}:\${PORT}?cert=\${CERT}&key=\${KEY}&probe_resist=file:/var/www/html/index.html&knock=www.google.com&mux=true&muxConcurrency=32&idle_timeout=2592000s&keepalive_period=5s&fastOpen=true&compression=true&nodelay=true&congestion_control=bbr&tls13=true&reuse_port=true&tcp_fast_open_qlen=64&buffer_size=32768" \
-    -L "h3://\${USER}:\${PASS}@\${BIND_IP}:\${PORT}?cert=\${CERT}&key=\${KEY}&probe_resist=file:/var/www/html/index.html&knock=www.google.com&mux=true&muxConcurrency=32&idle_timeout=2592000s&keepalive_period=5s&fastOpen=true&compression=true&nodelay=true&congestion_control=bbr&tls13=true&reuse_port=true&tcp_fast_open_qlen=64&buffer_size=32768"
+-L "http+mtls://${USER}:${PASS}@${BIND_IP}:8443?cert=${CERT}&key=${KEY}&probe_resist=file:/var/www/html/index.html&knock=www.google.com&minVersion=VersionTLS13&muxKeepAliveInterval=6&muxKeepAliveTimeout=3s&muxConcurrency=64&muxMaxFrameSize=65536&muxMaxReceiveBuffer=8388608&muxMaxStreamBuffer=131072&nodelay=true&tls_session_ticket=true" 
 EOF
 
 # 给 mygost.sh 添加执行权限并运行
