@@ -72,7 +72,7 @@ sudo docker run -d --name gost \
     --log-opt max-size=10m \
     --log-opt max-file=3 \
     gogost/gost:latest \
--L "http+mtls://${USER}:${PASS}@${BIND_IP}:8443?cert=${CERT}&key=${KEY}&probe_resist=file:/var/www/html/index.html&knock=www.google.com&minVersion=VersionTLS13&muxKeepAliveInterval=6&muxKeepAliveTimeout=3s&muxConcurrency=64&muxMaxFrameSize=65536&muxMaxReceiveBuffer=8388608&muxMaxStreamBuffer=131072&nodelay=true&tls_session_ticket=true" 
+-L "http2://${USER}:${PASS}@${BIND_IP}:${PORT}?cert=${CERT}&key=${KEY}&probe_resist=file:/var/www/html/index.html&knock=www.google.com&minVersion=VersionTLS12&maxVersion=VersionTLS13&mux=true&tls_session_ticket=true" 
 EOF
 
 # 给 mygost.sh 添加执行权限并运行
