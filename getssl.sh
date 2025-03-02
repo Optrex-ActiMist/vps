@@ -21,8 +21,8 @@ sudo snap install core
 # 再次更新 apt 软件包列表 (snapd 安装后可能需要)
 sudo apt-get update
 
-# 安装 certbot (现在官方推荐通过 snap 安装 Certbot，而不是通过 apt)
-sudo snap install --classic certbot
+# 安装 certbot 
+sudo apt-get install certbot
 
 # 允许 80 端口 (HTTP)
 sudo iptables -I INPUT -p tcp --dport 80 -j ACCEPT
