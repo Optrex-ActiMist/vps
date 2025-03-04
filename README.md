@@ -46,6 +46,10 @@ docker run -d --restart=always \
   --name vocechat-server \
   privoce/vocechat-server:latest
 ``` 
+### 优化 vps 虚拟内存（先删除旧swap文件，再建立新swap文件，最后应用更改：sudo sysctl -p
+```
+wget https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/swap.sh && bash swap.sh
+```
 
 ### 其它 Docker 镜像：
 - deep-research-web-ui [https://github.com/AnotiaWang/deep-research-web-ui]
@@ -56,4 +60,4 @@ docker run -d --restart=always \
 
 ### 其它工具
 - acme.sh (可以申请支持通配符的证书，自动续期)
-- 
+
