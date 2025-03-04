@@ -32,9 +32,17 @@ sudo apt-get update
 # 安装 Docker 相关组件
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-# 配置 BBR
-echo "net.core.default_qdisc=fq" | sudo tee -a /etc/sysctl.conf
+# 配置 BBR+CAKE
+## 更新软件包列表并安装 iproute2
+sudo apt update
+sudo apt install iproute2 -y
+
+## 将 CAKE 和 BBR 配置写入 sysctl.conf
+echo "net.core.default_qdisc=cake" | sudo tee -a /etc/sysctl.conf
 echo "net.ipv4.tcp_congestion_control=bbr" | sudo tee -a /etc/sysctl.conf
+
+## 应用配置
 sudo sysctl -p
 
-echo "安装完成！Docker 和 BBR 已配置。"
+
+echo "安装完成！Docker 和 BBR+CAKE 已配置。"
