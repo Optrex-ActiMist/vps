@@ -51,7 +51,7 @@ docker run -d --restart=always \
 docker pull byaidu/pdf2zh
 docker run -d -p 7860:7860 byaidu/pdf2zh
 ```
-### 优化 vps 虚拟内存
+### 9 优化 vps 虚拟内存
 ```
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/swap.sh)
 ```
