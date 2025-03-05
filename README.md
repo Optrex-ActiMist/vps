@@ -38,7 +38,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/refs/hea
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/install_watchtower.sh)
 ```
 
-### 7 安装 vocechat (https://doc.voce.chat/)
+### 7. 安装 vocechat (https://doc.voce.chat/)
 ```
 # 运行容器
 docker run -d --restart=always \
@@ -46,19 +46,18 @@ docker run -d --restart=always \
   --name vocechat-server \
   privoce/vocechat-server:latest
 ``` 
-### 8 安装 PDF Translator
+### 8. 安装 PDF Math Translate [https://github.com/Byaidu/PDFMathTranslate]
 ```
 docker pull byaidu/pdf2zh
 docker run -d -p 7860:7860 byaidu/pdf2zh
 ```
-### 9 优化 vps 虚拟内存
+### 9. 优化 vps 虚拟内存
 ```
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/swap.sh)
 ```
 
 ### 其它 Docker 镜像：
 - deep-research-web-ui [https://github.com/AnotiaWang/deep-research-web-ui]
-- PDF Math Translate [https://github.com/Byaidu/PDFMathTranslate]
 - WordPress
 - Markitdown
 - Stirling-PDF
