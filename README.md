@@ -35,7 +35,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/refs/hea
 
 ### 6. 安装 Watchtower （自动更新 docker image）
 ```
-bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/refs/heads/main/install_watchtower.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/install_watchtower.sh)
 ```
 
 ### 7 安装 vocechat (https://doc.voce.chat/)
@@ -53,7 +53,7 @@ docker run -d -p 7860:7860 byaidu/pdf2zh
 ```
 ### 优化 vps 虚拟内存
 ```
-
+bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/swap.sh)
 ```
 
 ### 其它 Docker 镜像：
