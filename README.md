@@ -49,7 +49,7 @@ docker run -d --restart=always \
 ### 8. 安装 PDF Math Translate [https://github.com/Byaidu/PDFMathTranslate]
 ```
 docker pull byaidu/pdf2zh
-docker run -d -p 7860:7860 byaidu/pdf2zh
+docker run -d --restart unless-stopped -p 7860:7860 byaidu/pdf2zh
 ```
 ### 9. 优化 vps 虚拟内存
 ```
