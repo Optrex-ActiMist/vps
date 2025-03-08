@@ -56,16 +56,16 @@ docker run -d --restart unless-stopped -p 7860:7860 byaidu/pdf2zh
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/swap.sh)
 ```
 
-### 其它 Docker 镜像：
+* ### 其它 Docker 镜像：
 * deep-research-web-ui [https://github.com/AnotiaWang/deep-research-web-ui]
 * WordPress
 * Markitdown
 * Stirling-PDF
 
-### * 其它工具
+* ### 其它工具
 - acme.sh (可以申请支持通配符的证书，自动续期)
 
-### * Focalboard
+* ### Focalboard
   1. 安装环境
   * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
   * [Go](https://go.dev/doc/install)
