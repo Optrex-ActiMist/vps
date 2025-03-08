@@ -66,11 +66,11 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/swa
 - acme.sh (可以申请支持通配符的证书，自动续期)
 
 * ### Focalboard
-  1. 安装环境
-  * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-  * [Go](https://go.dev/doc/install)
-  * [Nodjs](https://nodejs.org/en/download/)
-  2. 安装依赖
+1. 安装环境
+ * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+ * [Go](https://go.dev/doc/install)
+ * [Nodjs](https://nodejs.org/en/download/)
+2. 安装依赖
 ```
 sudo apt-get install libgtk-3-dev
 sudo apt-get install libwebkit2gtk-4.0-dev
