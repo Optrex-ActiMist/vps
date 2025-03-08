@@ -71,11 +71,11 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/swa
   * [Go](https://go.dev/doc/install)
   * [Nodjs](https://nodejs.org/en/download/)
   2. 安装依赖
-    ```
-    sudo apt-get install libgtk-3-dev
-    sudo apt-get install libwebkit2gtk-4.0-dev
-    sudo apt-get install autoconf dh-autoreconf
-    ```
+```
+sudo apt-get install libgtk-3-dev
+sudo apt-get install libwebkit2gtk-4.0-dev
+sudo apt-get install autoconf dh-autoreconf
+```
   3. 通过docker 安装
 ```
 docker run -it -p -d 80:8000 mattermost/focalboard
