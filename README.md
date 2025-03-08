@@ -46,7 +46,7 @@ docker run -d --restart=always \
   --name vocechat-server \
   privoce/vocechat-server:latest
 ``` 
-### 8. 安装 PDF Math Translate [https://github.com/Byaidu/PDFMathTranslate]
+### 8. 安装 PDF MathTranslate [https://github.com/Byaidu/PDFMathTranslate]
 ```
 docker pull byaidu/pdf2zh
 docker run -d --restart unless-stopped -p 7860:7860 byaidu/pdf2zh
@@ -57,10 +57,10 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/swa
 ```
 
 * ### 其它 Docker 镜像：
-* deep-research-web-ui [https://github.com/AnotiaWang/deep-research-web-ui]
-* WordPress
-* Markitdown
-* Stirling-PDF
+  * deep-research-web-ui [https://github.com/AnotiaWang/deep-research-web-ui]
+  * WordPress
+  * Markitdown
+  * Stirling-PDF
 
 * ### 其它工具
 - acme.sh (可以申请支持通配符的证书，自动续期)
