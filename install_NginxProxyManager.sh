@@ -12,9 +12,9 @@ services:
     restart: unless-stopped
     ports:
         - '81:81' # Admin Web Port
-      # - '80:80' # Public HTTP Port
-      # - '443:443' # Public HTTPS Port
-      # - '21:21' # FTP
+        - '80:80' # Public HTTP Port
+        - '443:443' # Public HTTPS Port
+        - '21:21' # FTP
     volumes:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
