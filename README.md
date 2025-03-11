@@ -91,6 +91,7 @@ docker run --restart unless-stopped \
   * Markitdown
   * Stirling-PDF
   * 雷池 WAF
+  * Perplexica
 
 * ### 其它工具
 - acme.sh (可以申请支持通配符的证书，自动续期)
