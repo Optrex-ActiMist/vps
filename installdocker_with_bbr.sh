@@ -45,4 +45,4 @@ echo "net.ipv4.tcp_congestion_control=bbr" | sudo tee -a /etc/sysctl.conf
 sudo sysctl -p
 
 
-echo "安装完成！Docker 和 BBR+CAKE 已配置。"
+echo "安装完成！Docker 和 BBR+FQ 已配置。"
