@@ -38,7 +38,7 @@ sudo apt update
 sudo apt install iproute2 -y
 
 ## 将 CAKE 和 BBR 配置写入 sysctl.conf
-echo "net.core.default_qdisc=cake" | sudo tee -a /etc/sysctl.conf
+echo "net.core.default_qdisc=fq" | sudo tee -a /etc/sysctl.conf
 echo "net.ipv4.tcp_congestion_control=bbr" | sudo tee -a /etc/sysctl.conf
 
 ## 应用配置
