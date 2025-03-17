@@ -42,7 +42,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/ins
 ```
 # 运行容器
 docker run -d --restart=always \
-  -p 3001:3000 \ #3000 端口被deepsearch 占用，所以改为监听3001端口
+  -p 3001:3000 \
   --name vocechat-server \
   privoce/vocechat-server:latest
 ``` 
