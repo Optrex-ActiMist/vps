@@ -44,6 +44,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/ins
 docker run -d --restart=always \
   -p 3001:3000 \
   --name vocechat-server \
+  -v vocechat-data:/home/vocechat-server/data \ # 把用户数据映射到 vocechat-data 卷，没有的话就新建
   privoce/vocechat-server:latest
 ``` 
 ### 8. 安装 PDF MathTranslate [https://github.com/Byaidu/PDFMathTranslate]
