@@ -41,7 +41,8 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/ins
 ### 7. 安装 vocechat (https://doc.voce.chat/)
 ```
 # 运行容器
-docker run -d --restart=always \
+docker run -d \
+--restart=unless-stopped \
   -p 3001:3000 \
   --name vocechat-server \
   -v vocechat-data:/home/vocechat-server/data \ # 把用户数据映射到 vocechat-data 卷，没有的话就新建
