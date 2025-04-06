@@ -42,12 +42,14 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/ins
 ```
 # 运行容器
 docker run -d \
---restart=unless-stopped \
-  -p 3001:3000 \
-  --name vocechat-server \
-  -v vocechat-data:/home/vocechat-server/data \ # 把用户数据映射到 vocechat-data 卷，没有的话就新建
-  privoce/vocechat-server:latest
+    --restart=unless-stopped \
+      -p 3001:3000 \
+      --name vocechat-server \
+      -v vocechat-data:/home/vocechat-server/data \
+      privoce/vocechat-server:latest
 ``` 
+上面-v 命令的作用是：把用户数据映射到 vocechat-data 卷，没有的话就新建
+
 ### 8. 安装 PDF MathTranslate [https://github.com/Byaidu/PDFMathTranslate]
 ```
 docker pull byaidu/pdf2zh
