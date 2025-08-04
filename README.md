@@ -59,20 +59,9 @@ docker run -d --restart unless-stopped -p 7860:7860 byaidu/pdf2zh
 ```
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/swap.sh)
 ```
-### 10. Focalboard
-1. 安装环境
- * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
- * [Go](https://go.dev/doc/install)
- * [Nodjs](https://nodejs.org/en/download/)
-2. 安装依赖
+### 10. Prompt Optimizer 
 ```
-sudo apt-get install libgtk-3-dev
-sudo apt-get install libwebkit2gtk-4.0-dev
-sudo apt-get install autoconf dh-autoreconf
-```
-  3. 通过docker 安装
-```
-docker run -it -p -d 80:8000 mattermost/focalboard
+docker run -d -p 8081:80 --restart unless-stopped --name prompt-optimizer linshen/prompt-optimizer
 ```
 ### 11. SearXNG
 ```
