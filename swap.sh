@@ -15,7 +15,7 @@ fi
 read -p "按 Enter 继续..." dummy
 
 # 询问用户目标 swap 大小
-echo "请输入您想将 swap 扩展到的大小（单位：GB，例如 4 表示 4GB）："
+echo "请输入您想将 swap 扩展到的大小（单位：GB，例如 4 表示 4GB。建议为内存的2倍）："
 read target_size
 if ! [[ "$target_size" =~ ^[0-9]+$ ]] || [ "$target_size" -le 0 ]; then
   echo "输入无效，请输入一个正整数。"
