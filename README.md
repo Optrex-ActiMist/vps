@@ -70,7 +70,7 @@ cd my-instance
 export PORT=8088
 docker pull searxng/searxng
 docker run --restart unless-stopped \
-             -d -p ${PORT}:8088 \
+             -d -p ${PORT}:8080 \
              -v "${PWD}/searxng:/etc/searxng" \
              -e "BASE_URL=http://localhost:$PORT/" \
              -e "INSTANCE_NAME=my-instance" \
