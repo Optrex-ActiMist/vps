@@ -70,13 +70,32 @@ cd my-instance
 export PORT=8088
 docker pull searxng/searxng
 docker run --restart unless-stopped \
-             -d -p ${PORT}:8080 \
+
              -v "${PWD}/searxng:/etc/searxng" \
              -e "BASE_URL=http://localhost:$PORT/" \
              -e "INSTANCE_NAME=my-instance" \
              searxng/searxng
 ```
   **之后在 Nginx Proxy Manager 里把 search.domain.com 反代到 8088端口即可**
+
+### 12. deep-research-u14 
+```
+docker run -d --name deep-research -p 3333:3000 xiangfa/deep-research
+```
+
+### 13. deep-research-dzhng 
+```
+docker run -d \
+  -p 3000:3000 \
+  -e NUXT_PUBLIC_SERVER_MODE=true \
+  -e NUXT_AI_API_KEY=your-ai-api-key \
+  -e NUXT_WEB_SEARCH_API_KEY=your-search-api-key \
+  -e NUXT_PUBLIC_AI_PROVIDER=openai-compatible \
+  -e NUXT_PUBLIC_AI_MODEL=gpt-4o-mini \
+  -e NUXT_PUBLIC_WEB_SEARCH_PROVIDER=tavily \
+  --name deep-research-web \
+  anotia/deep-research-web:latest
+```
 
 * ### 其它 Docker 镜像：
   * deep-research-web-ui [https://github.com/AnotiaWang/deep-research-web-ui]
