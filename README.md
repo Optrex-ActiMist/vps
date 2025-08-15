@@ -80,12 +80,20 @@ docker run --restart unless-stopped \
 
 ### 12. deep-research-u14 
 ```
-docker run -d --name deep-research -p 3333:3000 xiangfa/deep-research
+docker run -d \
+    --restart=unless-stopped \
+    -p 3333:3000 \
+    --name deep-research \
+    xiangfa/deep-research:latest
 ```
 
 ### 13. deep-research-dzhng 
 ```
-docker run -p 3000:3000 --name deep-research-web -d anotia/deep-research-web:latest
+docker run -d \
+    --restart=unless-stopped \
+    -p 3000:3000 \
+    --name deep-research-web \
+    anotia/deep-research-web:latest
 ```
 
 * ### 其它 Docker 镜像：
