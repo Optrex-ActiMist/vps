@@ -85,16 +85,7 @@ docker run -d --name deep-research -p 3333:3000 xiangfa/deep-research
 
 ### 13. deep-research-dzhng 
 ```
-docker run -d \
-  -p 3000:3000 \
-  -e NUXT_PUBLIC_SERVER_MODE=true \
-  -e NUXT_AI_API_KEY=your-ai-api-key \
-  -e NUXT_WEB_SEARCH_API_KEY=your-search-api-key \
-  -e NUXT_PUBLIC_AI_PROVIDER=openai-compatible \
-  -e NUXT_PUBLIC_AI_MODEL=gpt-4o-mini \
-  -e NUXT_PUBLIC_WEB_SEARCH_PROVIDER=tavily \
-  --name deep-research-web \
-  anotia/deep-research-web:latest
+docker run -p 3000:3000 --name deep-research-web -d anotia/deep-research-web:latest
 ```
 
 * ### 其它 Docker 镜像：
