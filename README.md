@@ -87,7 +87,7 @@ docker run -d \
     xiangfa/deep-research:latest
 ```
 
-### 13. deep-research-dzhng 
+### 13. deep-research-web  [https://github.com/AnotiaWang/deep-research-web-ui]
 ```
 docker run -d \
     --restart=unless-stopped \
@@ -95,9 +95,13 @@ docker run -d \
     --name deep-research-web \
     anotia/deep-research-web:latest
 ```
+### 14 Kresearch [https://github.com/KuekHaoYang/KResearch]
+```
+docker run --rm --privileged multiarch/qemu-user-static --reset -p yes  
+docker run --platform linux/arm64 -d --restart=unless-stopped -p 8080:80 --name kresearch kuekhaoyang/kresearch:latest
+```
 
 * ### 其它 Docker 镜像：
-  * deep-research-web-ui [https://github.com/AnotiaWang/deep-research-web-ui]
   * WordPress
   * Markitdown
   * Stirling-PDF
