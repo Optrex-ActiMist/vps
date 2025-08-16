@@ -112,7 +112,7 @@ cd subscription-management
 ```
 nano .env
 ```
-copy 以下代码，并做相应修改：
+3. copy 以下代码，并做相应修改：
 ```
 # API security key (required for all protected endpoints)
 API_KEY=KnjzaUtgRBiAkKoJ
@@ -143,11 +143,11 @@ SCHEDULER_CHECK_TIME=09:00
 NOTIFICATION_DEFAULT_ADVANCE_DAYS=7
 NOTIFICATION_DEFAULT_REPEAT_NOTIFICATION=false
 ```
-Start services：
+4. Start services：
 ```
 docker-compose up -d
 ```
-在cloudflare做二级域名，在 Nginx Proxy Manager里申请SSL
+5. 在cloudflare做二级域名，在 Nginx Proxy Manager里申请SSL
 
 * ### 其它 Docker 镜像：
   * WordPress
