@@ -101,6 +101,54 @@ docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 docker run --platform linux/arm64 -d --restart=unless-stopped -p 8080:80 --name kresearch kuekhaoyang/kresearch:latest
 ```
 
+### 15 订阅管理 [https://github.com/huhusmang/Subscription-Management]
+**docker compose 部署**
+1. Clone the project
+```
+git clone https://github.com/huhusmang/subscription-management.git
+cd subscription-management
+```
+2. Configure environment variables
+```
+nano .env
+```
+copy 以下代码，并做相应修改：
+```
+# API security key (required for all protected endpoints)
+API_KEY=KnjzaUtgRBiAkKoJ
+
+# Service port (optional, default 3001)
+PORT=3002
+
+# Base currency (optional, default CNY)
+# Supported: USD, EUR, GBP, CNY, JPY, CAD, AUD, TRY
+BASE_CURRENCY=CNY
+
+# Database path (used for Docker deployment)
+DATABASE_PATH=/app/data/database.sqlite
+
+# Tianapi API key (optional, for real-time exchange rate updates)
+# Get your key from: https://www.tianapi.com/
+TIANAPI_KEY=2d6ab562e5dbebdb480a1781b69880a0
+
+# Telegram Bot Token (required for Telegram notifications)
+# Get from @BotFather on Telegram
+TELEGRAM_BOT_TOKEN=your_telegram_bot_token_here
+
+# notification settings
+NOTIFICATION_DEFAULT_CHANNELS=["telegram"]
+NOTIFICATION_DEFAULT_LANGUAGE=en
+SCHEDULER_TIMEZONE=UTC
+SCHEDULER_CHECK_TIME=09:00
+NOTIFICATION_DEFAULT_ADVANCE_DAYS=7
+NOTIFICATION_DEFAULT_REPEAT_NOTIFICATION=false
+```
+Start services：
+```
+docker-compose up -d
+```
+在cloudflare做二级域名，在 Nginx Proxy Manager里申请SSL
+
 * ### 其它 Docker 镜像：
   * WordPress
   * Markitdown
