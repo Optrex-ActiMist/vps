@@ -152,10 +152,41 @@ docker-compose up -d
 ```
 5. 在cloudflare做二级域名，在 Nginx Proxy Manager里申请SSL
 
+### 16 Stirling-PDF
+1. 创建目录
+```
+mkdir ~/stirlingpdf
+cd ~/stirlingpdf
+```
+2. 用编辑器创建 docker-compose.yml
+```
+nano docker-compose.yml
+```
+3. 粘贴以下内容到编辑器里(修改外部端口号以避免冲突)：
+```
+services:
+  stirling-pdf:
+    image: docker.stirlingpdf.com/stirlingtools/stirling-pdf:latest
+    ports:
+      - '8082:8080'
+    volumes:
+      - ./StirlingPDF/trainingData:/usr/share/tessdata # Required for extra OCR languages
+      - ./StirlingPDF/extraConfigs:/configs
+      - ./StirlingPDF/customFiles:/customFiles/
+      - ./StirlingPDF/logs:/logs/
+      - ./StirlingPDF/pipeline:/pipeline/
+    environment:
+      - DISABLE_ADDITIONAL_FEATURES=false
+      - LANGS=en_GB
+```
+4. 后台启动 docker
+```
+docker compose up -d
+```
+
 * ### 其它 Docker 镜像：
   * WordPress
   * Markitdown
-  * Stirling-PDF
   * 雷池 WAF
   * Perplexica
 
