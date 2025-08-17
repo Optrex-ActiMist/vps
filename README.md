@@ -98,7 +98,7 @@ docker run -d \
 ### 14 Kresearch [https://github.com/KuekHaoYang/KResearch]
 ```
 docker run --rm --privileged multiarch/qemu-user-static --reset -p yes  
-docker run --platform linux/arm64 -d --restart=unless-stopped -p 8080:80 --name kresearch kuekhaoyang/kresearch:latest
+docker run --platform linux/arm64 -d --restart=unless-stopped -p 8081:80 --name kresearch kuekhaoyang/kresearch:latest
 ```
 
 ### 15 订阅管理 [https://github.com/huhusmang/Subscription-Management]
