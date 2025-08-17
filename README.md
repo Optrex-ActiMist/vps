@@ -95,7 +95,7 @@ docker run -d \
     --name deep-research-web \
     anotia/deep-research-web:latest
 ```
-### 14 Kresearch [https://github.com/KuekHaoYang/KResearch]
+### 14. Kresearch [https://github.com/KuekHaoYang/KResearch]
 ```
 sudo apt-get update && sudo apt-get install -y qemu-user-static
 sudo systemctl enable --now systemd-binfmt.service
@@ -104,7 +104,7 @@ sudo systemctl enable --now binfmt-support.service
 docker run --platform linux/arm64 -d --restart=unless-stopped -p 8081:80 --name kresearch kuekhaoyang/kresearch:latest
 ```
 
-### 15 订阅管理 [https://github.com/huhusmang/Subscription-Management]
+### 15. 订阅管理 [https://github.com/huhusmang/Subscription-Management]
 **docker compose 部署**
 1. Clone the project
 ```
@@ -152,7 +152,7 @@ docker-compose up -d
 ```
 5. 在cloudflare做二级域名，在 Nginx Proxy Manager里申请SSL
 
-### 16 Stirling-PDF
+### 16. Stirling-PDF
 1. 创建目录
 ```
 mkdir ~/stirlingpdf
