@@ -97,7 +97,10 @@ docker run -d \
 ```
 ### 14 Kresearch [https://github.com/KuekHaoYang/KResearch]
 ```
-docker run --rm --privileged multiarch/qemu-user-static --reset -p yes  
+sudo apt-get update && sudo apt-get install -y qemu-user-static
+sudo systemctl enable --now systemd-binfmt.service
+sudo systemctl status systemd-binfmt.service
+sudo systemctl enable --now binfmt-support.service
 docker run --platform linux/arm64 -d --restart=unless-stopped -p 8081:80 --name kresearch kuekhaoyang/kresearch:latest
 ```
 
