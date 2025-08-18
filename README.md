@@ -192,7 +192,7 @@ docker compose up -d
   * caddy
   * ollama
   * coolify
-  * New api [https://github.com/QuantumNous/new-api]
+  * New api [https://github.com/QuantumNous/new-api] [https://zhuanlan.zhihu.com/p/1899535446356239761]
 
 * ### 其它工具
 - acme.sh (可以申请支持通配符的证书，自动续期)
