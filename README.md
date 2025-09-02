@@ -1,7 +1,7 @@
 # 新建VPS快捷运行脚本：
 ### 1. 安装 docker，docker-compose 和 BBR
 ```
-bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/installdocker_with_bbr.sh)
+bash <(curl -sL 'https://get.docker.com')
 ```
 ### 2. 申请 SSL 证书，以下二选一(若安装Nginx，这一步可省略)：
 ##### - 安装 Cerbot 并使用 Letsencrypt standalone方式申请证书
