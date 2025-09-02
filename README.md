@@ -3,6 +3,10 @@
 ```
 bash <(curl -sL 'https://get.docker.com')
 ```
+或者：
+```
+bash <(curl -sL 'https://github.com/Optrex-ActiMist/vps/main/installdocker_with_bbr.sh')
+```
 ### 2. 申请 SSL 证书，以下二选一(若安装Nginx，这一步可省略)：
 ##### - 安装 Cerbot 并使用 Letsencrypt standalone方式申请证书
 ```
