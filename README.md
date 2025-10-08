@@ -37,9 +37,21 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/ins
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/refs/heads/main/install_Portainer.sh)
 ```
 
-### 6. 安装 Watchtower （自动更新 docker image）
+### 6. 安装 tugtainer （自动更新 docker image）
 ```
-bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/install_watchtower.sh)
+# create volume
+docker volume create tugtainer_data
+
+# pull image
+docker pull quenary/tugtainer:latest
+
+# run container
+docker run -d -p 9412:80 \
+    --name=tugtainer \
+    --restart=unless-stopped \
+    -v tugtainer_data:/tugtainer \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    quenary/tugtainer:latest
 ```
 
 ### 7. 安装 vocechat (https://doc.voce.chat/)
