@@ -85,12 +85,12 @@ mkdir my-instance
 cd my-instance
 export PORT=8088
 docker pull searxng/searxng
-docker run --restart unless-stopped \
-
-             -v "${PWD}/searxng:/etc/searxng" \
-             -e "BASE_URL=http://localhost:$PORT/" \
-             -e "INSTANCE_NAME=my-instance" \
-             searxng/searxng
+docker run -d --restart unless-stopped \
+-v "${PWD}/searxng:/etc/searxng" \
+-e "BASE_URL=http://localhost:$PORT/" \
+-e "INSTANCE_NAME=my-instance" \
+-p $PORT:8080 \
+searxng/searxng
 ```
   **之后在 Nginx Proxy Manager 里把 search.domain.com 反代到 8088端口即可**
 
