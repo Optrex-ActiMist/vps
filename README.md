@@ -32,12 +32,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/gos
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/install_NginxProxyManager.sh)
 ```
 
-### 5. 安装 Portainer(docker管理工具)
-```
-bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/refs/heads/main/install_Portainer.sh)
-```
-
-### 6. 安装 tugtainer （自动更新 docker image）
+### 5. 安装 tugtainer （自动更新 docker image）
 ```
 # create volume
 docker volume create tugtainer_data
@@ -54,7 +49,7 @@ docker run -d -p 9412:80 \
     quenary/tugtainer:latest
 ```
 
-### 7. 安装 vocechat (https://doc.voce.chat/)
+### 6. 安装 vocechat (https://doc.voce.chat/)
 ```
 # 运行容器
 docker run -d \
@@ -66,20 +61,20 @@ docker run -d \
 ``` 
 上面-v 命令的作用是：把用户数据映射到 vocechat-data 卷，没有的话就新建
 
-### 8. 安装 PDF MathTranslate [https://github.com/Byaidu/PDFMathTranslate]
+### 7. 安装 PDF MathTranslate [https://github.com/Byaidu/PDFMathTranslate]
 ```
 docker pull byaidu/pdf2zh
 docker run -d --restart unless-stopped -p 7860:7860 byaidu/pdf2zh
 ```
-### 9. 优化 vps 虚拟内存
+### 8. 优化 vps 虚拟内存
 ```
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/swap.sh)
 ```
-### 10. Prompt Optimizer 
+### 9. Prompt Optimizer 
 ```
 docker run -d -p 8081:80 --restart unless-stopped --name prompt-optimizer linshen/prompt-optimizer
 ```
-### 11. SearXNG
+### 10. SearXNG
 ```
 mkdir my-instance
 cd my-instance
@@ -94,7 +89,7 @@ searxng/searxng
 ```
   **之后在 Nginx Proxy Manager 里把 search.domain.com 反代到 8088端口即可**
 
-### 12. deep-research-u14 
+### 11. deep-research-u14 
 ```
 docker run -d \
     --restart=unless-stopped \
@@ -103,7 +98,7 @@ docker run -d \
     xiangfa/deep-research:latest
 ```
 
-### 13. deep-research-web  [https://github.com/AnotiaWang/deep-research-web-ui]
+### 12. deep-research-web  [https://github.com/AnotiaWang/deep-research-web-ui]
 ```
 docker run -d \
     --restart=unless-stopped \
@@ -111,7 +106,7 @@ docker run -d \
     --name deep-research-web \
     anotia/deep-research-web:latest
 ```
-### 14. Kresearch [https://github.com/KuekHaoYang/KResearch]
+### 13. Kresearch [https://github.com/KuekHaoYang/KResearch]
 ```
 sudo apt-get update && sudo apt-get install -y qemu-user-static
 sudo systemctl enable --now systemd-binfmt.service
@@ -120,7 +115,7 @@ sudo systemctl enable --now binfmt-support.service
 docker run --platform linux/arm64 -d --restart=unless-stopped -p 8081:80 --name kresearch kuekhaoyang/kresearch:latest
 ```
 
-### 15. 订阅管理 [https://github.com/huhusmang/Subscription-Management]
+### 14. 订阅管理 [https://github.com/huhusmang/Subscription-Management]
 **docker compose 部署**
 1. Clone the project
 ```
@@ -168,7 +163,7 @@ docker-compose up -d
 ```
 5. 在cloudflare做二级域名，在 Nginx Proxy Manager里申请SSL
 
-### 16. Stirling-PDF
+### 15. Stirling-PDF
 1. 创建目录
 ```
 mkdir ~/stirlingpdf
