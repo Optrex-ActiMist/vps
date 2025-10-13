@@ -207,3 +207,4 @@ docker compose up -d
 
 * ### 其它工具
 - acme.sh (可以申请支持通配符的证书，自动续期)
+- 3x-ui [https://github.com/MHSanaei/3x-ui/tree/main]
