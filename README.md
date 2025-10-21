@@ -51,6 +51,10 @@ docker run -d -p 9412:80 \
     --volume /var/run/docker.sock:/var/run/docker.sock \
     -e WATCHTOWER_CLEANUP=true \
     containrrr/watchtower
+`````````````````````````
+检查watchtower运行日志：
+```
+docker logs watchtower
 ```
 
 ### 6. 安装 vocechat (https://doc.voce.chat/)
