@@ -49,6 +49,7 @@ docker run -d -p 9412:80 \
     docker run --detach \
     --name watchtower \
     --volume /var/run/docker.sock:/var/run/docker.sock \
+    -e WATCHTOWER_CLEANUP=true \
     containrrr/watchtower
 ```
 
