@@ -4,7 +4,6 @@
 set -e
 # 确保管道中的任何命令失败都会导致整个管道失败
 set -o pipefail
-
 # 检查 Docker 是否已安装，如果已安装则直接退出
 if command -v docker &> /dev/null && docker compose version &> /dev/null; then
     echo "✅ Docker 和 Docker Compose 已经安装。"
