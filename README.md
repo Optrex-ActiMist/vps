@@ -44,6 +44,13 @@ docker run -d -p 9412:80 \
     -v /var/run/docker.sock:/var/run/docker.sock \
     quenary/tugtainer:latest
 ```
+    或者，安装watchtower：
+    ···
+    docker run --detach \
+    --name watchtower \
+    --volume /var/run/docker.sock:/var/run/docker.sock \
+    containrrr/watchtower
+    ···
 
 ### 6. 安装 vocechat (https://doc.voce.chat/)
 ```
