@@ -45,7 +45,7 @@ docker run -d -p 9412:80 \
     quenary/tugtainer:latest
 ```
 或者，安装watchtower：
-    ```
+```
     docker run --detach \
     --name watchtower \
     --volume /var/run/docker.sock:/var/run/docker.sock \
