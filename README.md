@@ -167,7 +167,7 @@ NOTIFICATION_DEFAULT_REPEAT_NOTIFICATION=false
 ```
 4. Start services：
 ```
-docker-compose up -d
+docker compose up -d
 ```
 5. 在cloudflare做二级域名，在 Nginx Proxy Manager里申请SSL
 
