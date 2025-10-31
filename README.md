@@ -170,7 +170,7 @@ NOTIFICATION_DEFAULT_REPEAT_NOTIFICATION=false
 docker compose up -d
 ```
 5. 在cloudflare做二级域名，在 Nginx Proxy Manager里申请SSL
-默认：
+6. 默认：
 用户名：admin
 密码： admin
 
