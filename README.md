@@ -1,6 +1,18 @@
 # 新建VPS快捷运行脚本：
 ### 1. 安装 docker，docker-compose 和 BBR
 ```
+apt update
+apt install -y apt-transport-https ca-certificates curl gnupg
+curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
+apt update
+apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+systemctl status docker --no-pager
+```
+或者：
+```
 bash <(curl -sL 'https://get.docker.com')
 ```
 ### 2. 申请 SSL 证书，以下二选一(若安装Nginx，这一步可省略)：
