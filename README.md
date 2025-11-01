@@ -2,7 +2,8 @@
 ### 1. 安装 docker，docker-compose 和 BBR
 ```
 apt update
-apt install -y apt-transport-https ca-certificates curl gnupg
+apt install -y ca-certificates curl gnupg
+install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
