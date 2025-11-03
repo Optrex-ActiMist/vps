@@ -59,11 +59,16 @@ docker run -d -p 9412:80 \
 ```
 或者，安装watchtower：
 ```
-    docker run --detach \
-    --name watchtower \
-    --volume /var/run/docker.sock:/var/run/docker.sock \
-    -e WATCHTOWER_CLEANUP=true \
-    containrrr/watchtower
+docker run --detach \
+  --name watchtower \
+  --restart unless-stopped \
+  --volume /var/run/docker.sock:/var/run/docker.sock \
+  -e TZ=Asia/Shanghai \
+  -e WATCHTOWER_CLEANUP=true \
+  -e WATCHTOWER_SCHEDULE="0 0 4 * * *" \
+  -e WATCHTOWER_LABEL_ENABLE=true \
+  -e WATCHTOWER_MONITORING_PERIOD=24h \
+  containrrr/watchtower:latest
 `````````````````````````
 检查watchtower运行日志：
 ```
