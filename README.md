@@ -231,8 +231,6 @@ docker compose up -d
   * Perplexica
   * caddy
   * ollama
-  * coolify
-  * New api [https://github.com/QuantumNous/new-api] [https://zhuanlan.zhihu.com/p/1899535446356239761]
   * Uptime Kuma https://github.com/louislam/uptime-kuma
 
 * ### 其它工具
