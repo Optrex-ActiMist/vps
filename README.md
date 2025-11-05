@@ -233,8 +233,7 @@ docker compose up -d
   * ollama
   * coolify
   * New api [https://github.com/QuantumNous/new-api] [https://zhuanlan.zhihu.com/p/1899535446356239761]
-  * Kuma Mieru https://github.com/Alice39s/kuma-mieru
-    或者：Cute Kuma https://github.com/dermv/cute-kuma
+  * Uptime Kuma https://github.com/louislam/uptime-kuma
 
 * ### 其它工具
 - acme.sh (可以申请支持通配符的证书，自动续期)
