@@ -232,6 +232,7 @@ docker compose up -d
   * caddy
   * ollama
   * Uptime Kuma https://github.com/louislam/uptime-kuma
+  * SamWaf https://github.com/samwafgo/SamWaf
 
 * ### 其它工具
 - acme.sh (可以申请支持通配符的证书，自动续期)
