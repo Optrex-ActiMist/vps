@@ -223,7 +223,10 @@ services:
 ```
 docker compose up -d
 ```
-
+* ### 3x-ui docker 部署
+```
+https://github.com/MHSanaei/3x-ui/wiki/Installation#docker-recommended
+```
 * ### 其它 Docker 镜像：
   * WordPress
   * Markitdown
