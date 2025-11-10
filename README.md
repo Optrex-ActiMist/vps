@@ -68,7 +68,6 @@ docker run -d \
   --schedule "0 0 3 * * *" \
   --cleanup \
   --include-stopped \
-  --label-enable false
 ```
 检查watchtower运行日志：
 ```
