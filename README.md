@@ -144,43 +144,66 @@ docker run --platform linux/arm64 -d --restart=unless-stopped -p 8081:80 --name 
 **docker compose 部署**
 1. Clone the project
 ```
-git clone https://github.com/huhusmang/subscription-management.git
+git clone https://github.com/huhusmang/Subscription-Management
 cd subscription-management
 ```
 2. Configure environment variables
 ```
-nano .env
+cp .env.production.example .env
+nano .evn
 ```
 3. copy 以下代码，并做相应修改：
 ```
-# API security key (required for all protected endpoints)
-API_KEY=KnjzaUtgRBiAkKoJ
-
-# Service port (optional, default 3001)
+# 服务端口 (可选，默认3001)
 PORT=3001
 
-# Base currency (optional, default CNY)
-# Supported: USD, EUR, GBP, CNY, JPY, CAD, AUD, TRY
+# 基础货币 (可选，默认CNY)
+# 支持的货币: USD, EUR, GBP, CNY, JPY, CAD, AUD, TRY, HKD
 BASE_CURRENCY=CNY
 
-# Database path (used for Docker deployment)
+# 数据库路径 (Docker部署时使用)
 DATABASE_PATH=/app/data/database.sqlite
 
-# Tianapi API key (optional, for real-time exchange rate updates)
-# Get your key from: https://www.tianapi.com/
+# 天行数据API密钥 (可选，用于实时汇率更新)
+# 获取密钥: https://www.tianapi.com/
 TIANAPI_KEY=2d6ab562e5dbebdb480a1781b69880a0
 
-# Telegram Bot Token (required for Telegram notifications)
-# Get from @BotFather on Telegram
+# 会话认证（必填）
+SESSION_SECRET=eOvILGLFqZ4tMUQAjfItc1sYkTxxkBf0gAagJiuFNTu4om26vaZ5FLLVPtyDNnRc
+ADMIN_USERNAME=admin
+ADMIN_PASSWORD=782a3LQ@
+# ADMIN_PASSWORD_HASH=your_password_hash (可选）
+# TRUST_PROXY=1                     # 位于反向代理/CDN 后方时设置代理层级
+# SESSION_COOKIE_SECURE=auto        # 控制 Cookie 的 secure 策略（auto|true|false）
+# SESSION_COOKIE_SAMESITE=lax       # 控制 SameSite 策略（lax|strict|none）
+# 首次启动时会输出生成的 ADMIN_PASSWORD_HASH，可将其复制到 .env 并删除 ADMIN_PASSWORD 以提升安全性。
+
+# Telegram 通知设置 (可选，用于 Telegram 通知)
+# 从Telegram的@BotFather获取
 TELEGRAM_BOT_TOKEN=your_telegram_bot_token_here
 
-# notification settings
+# 邮件通知设置 (可选，用于邮件通知)
+# SMTP服务器配置 (Gmail示例)
+EMAIL_HOST=smtp.gmail.com
+EMAIL_PORT=587
+EMAIL_SECURE=false
+EMAIL_USER=your_email@gmail.com
+EMAIL_PASSWORD=your_app_password
+EMAIL_FROM=Subscription Manager <no-reply@example.com>
+EMAIL_LOCALE=zh-CN
+
+# 通知设置
 NOTIFICATION_DEFAULT_CHANNELS=["telegram"]
-NOTIFICATION_DEFAULT_LANGUAGE=en
-SCHEDULER_TIMEZONE=UTC
+NOTIFICATION_DEFAULT_LANGUAGE=zh-CN
+SCHEDULER_TIMEZONE=Asia/Shanghai
 SCHEDULER_CHECK_TIME=09:00
 NOTIFICATION_DEFAULT_ADVANCE_DAYS=7
 NOTIFICATION_DEFAULT_REPEAT_NOTIFICATION=false
+
+# 容器镜像选择（可选）
+# IMAGE_TAG 控制 docker compose 使用的镜像标签
+# 例如：IMAGE_TAG=sha-d025f79 或 IMAGE_TAG=main 或 IMAGE_TAG=latest
+# IMAGE_TAG=latest
 ```
 4. Start services：
 ```
