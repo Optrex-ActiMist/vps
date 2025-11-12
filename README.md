@@ -209,14 +209,10 @@ NOTIFICATION_DEFAULT_REPEAT_NOTIFICATION=false
 ```
 docker compose up -d
 ```
-5. 在cloudflare做二级域名，在 Nginx Proxy Manager里申请SSL
-6. 默认：
-用户名：admin
-密码： admin
 
 ### 15. Stirling-PDF
 1. 创建目录
-```
+```````
 mkdir ~/stirlingpdf
 cd ~/stirlingpdf
 ```
