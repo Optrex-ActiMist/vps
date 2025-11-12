@@ -79,7 +79,7 @@ docker logs watchtower
 # 运行容器
 docker run -d \
     --restart=unless-stopped \
-      -p 3001:3000 \
+      -p 3002:3000 \
       --name vocechat-server \
       -v vocechat-data:/home/vocechat-server/data \
       privoce/vocechat-server:latest
