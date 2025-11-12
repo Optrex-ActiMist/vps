@@ -157,7 +157,7 @@ nano .env
 API_KEY=KnjzaUtgRBiAkKoJ
 
 # Service port (optional, default 3001)
-PORT=3002
+PORT=3001
 
 # Base currency (optional, default CNY)
 # Supported: USD, EUR, GBP, CNY, JPY, CAD, AUD, TRY
