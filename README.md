@@ -41,23 +41,8 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/gos
 bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/install_NginxProxyManager.sh)
 ```
 
-### 5. 安装 tugtainer （自动更新 docker image）
-```
-# create volume
-docker volume create tugtainer_data
+### 5. 安装watchtower（自动更新 docker image）
 
-# pull image
-docker pull quenary/tugtainer:latest
-
-# run container
-docker run -d -p 9412:80 \
-    --name=tugtainer \
-    --restart=unless-stopped \
-    -v tugtainer_data:/tugtainer \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    quenary/tugtainer:latest
-```
-或者，安装watchtower：
 ```
 docker run -d \
   --name watchtower \
