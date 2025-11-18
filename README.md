@@ -65,6 +65,8 @@ docker logs watchtower
 docker run -d \
     --restart=unless-stopped \
       -p 3002:3000 \
+      --dns 8.8.8.8 \
+      --dns 1.1.1.1 \
       --name vocechat-server \
       -v vocechat-data:/home/vocechat-server/data \
       privoce/vocechat-server:latest
