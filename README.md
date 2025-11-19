@@ -64,12 +64,14 @@ docker logs watchtower
 # 运行容器
 docker run -d \
     --restart=unless-stopped \
-      -p 3002:3000 \
-      --dns 8.8.8.8 \
-      --dns 1.1.1.1 \
-      --name vocechat-server \
-      -v vocechat-data:/home/vocechat-server/data \
-      privoce/vocechat-server:latest
+    -p 3002:3000 \
+    --dns 1.1.1.1 \
+    --name vocechat-server \
+    -v vocechat-data:/home/vocechat-server/data \
+    -e RUST_LOG=warn \
+    --log-opt max-size=10m \
+    --log-opt max-file=3 \
+    privoce/vocechat-server:latest
 ``` 
 上面-v 命令的作用是：把用户数据映射到 vocechat-data 卷，没有的话就新建
 
