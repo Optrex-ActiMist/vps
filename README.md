@@ -68,7 +68,7 @@ docker run -d \
     --dns 1.1.1.1 \
     --name vocechat-server \
     -v vocechat-data:/home/vocechat-server/data \
-    -e RUST_LOG=warn \
+    -e RUST_LOG=fatal \
     --log-opt max-size=10m \
     --log-opt max-file=3 \
     privoce/vocechat-server:latest
