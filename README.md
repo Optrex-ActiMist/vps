@@ -44,15 +44,13 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/ins
 ### 5. 安装watchtower（自动更新 docker image）
 
 ```
-
 docker run -d \
   --name watchtower \
-  --restart unless-stopped \
   -v /var/run/docker.sock:/var/run/docker.sock \
+  --restart unless-stopped \
   containrrr/watchtower:latest \
-  --schedule "0 0 3 * * *" \
+  --schedule "0 0 4 * * *" \   # 每天凌晨4点检查一次
   --cleanup \
-  --include-stopped \
 ```
 检查watchtower运行日志：
 ```
