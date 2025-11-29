@@ -44,11 +44,11 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Optrex-ActiMist/vps/main/ins
 ### 5. 安装watchtower（自动更新 docker image）
 
 ```
+
 docker run -d \
   --name watchtower \
   --restart unless-stopped \
   -v /var/run/docker.sock:/var/run/docker.sock \
-  -e TZ=Asia/Shanghai \
   containrrr/watchtower:latest \
   --schedule "0 0 3 * * *" \
   --cleanup \
@@ -59,10 +59,9 @@ docker run -d \
 docker logs watchtower
 ```
 
-### 6. 安装 vocechat (https://doc.voce.chat/)
-```
-# 运行容器
-docker run -d \
+### 6. 安装 vocechat (https://doc.voce.chat/)### 6. Install vocechat (https://doc.voce.chat/)### 6. Install vocechat (https://doc.voce.chat/)
+
+```docker run -d \docker run -d \docker run -d \
     --restart=unless-stopped \
     -p 3002:3000 \
     --dns 1.1.1.1 \
@@ -72,6 +71,9 @@ docker run -d \
     --log-opt max-size=10m \
     --log-opt max-file=3 \
     privoce/vocechat-server:latest
+```
+# 运行容器
+
 ``` 
 上面-v 命令的作用是：把用户数据映射到 vocechat-data 卷，没有的话就新建
 
