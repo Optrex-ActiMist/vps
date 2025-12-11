@@ -57,7 +57,7 @@ docker run -d \
 docker logs watchtower
 ```
 
-### 6. 安装 vocechat (https://doc.voce.chat/)### 
+### 6. 安装 vocechat (https://doc.voce.chat/)
 
 ```docker run -d \docker run -d \docker run -d \
     --restart=unless-stopped \
@@ -70,12 +70,10 @@ docker logs watchtower
     --log-opt max-file=3 \
     privoce/vocechat-server:latest
 ```
-# 运行容器
 上面-v 命令的作用是：把用户数据映射到 vocechat-data 卷，没有的话就新建
 
-``` 
-
 ### 7. 安装 PDF MathTranslate [https://github.com/Byaidu/PDFMathTranslate]
+
 ```
 docker pull byaidu/pdf2zh
 docker run -d --restart unless-stopped -p 7860:7860 byaidu/pdf2zh
