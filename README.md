@@ -57,7 +57,7 @@ docker run -d \
 docker logs watchtower
 ```
 
-### 6. 安装 vocechat (https://doc.voce.chat/)### 6. Install vocechat (https://doc.voce.chat/)### 6. Install vocechat (https://doc.voce.chat/)
+### 6. 安装 vocechat (https://doc.voce.chat/)### 
 
 ```docker run -d \docker run -d \docker run -d \
     --restart=unless-stopped \
