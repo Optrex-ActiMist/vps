@@ -71,9 +71,9 @@ docker logs watchtower
     privoce/vocechat-server:latest
 ```
 # 运行容器
+上面-v 命令的作用是：把用户数据映射到 vocechat-data 卷，没有的话就新建
 
 ``` 
-上面-v 命令的作用是：把用户数据映射到 vocechat-data 卷，没有的话就新建
 
 ### 7. 安装 PDF MathTranslate [https://github.com/Byaidu/PDFMathTranslate]
 ```
