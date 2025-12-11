@@ -59,7 +59,8 @@ docker logs watchtower
 
 ### 6. 安装 vocechat (https://doc.voce.chat/)
 
-```docker run -d \docker run -d \docker run -d \
+```
+    docker run -d \
     --restart=unless-stopped \
     -p 3002:3000 \
     --dns 1.1.1.1 \
