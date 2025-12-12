@@ -69,6 +69,7 @@ docker logs watchtower
     -e RUST_LOG=fatal \
     --log-opt max-size=10m \
     --log-opt max-file=3 \
+    # --label com.centurylinklabs.watchtower.enable=false \ # 阻止watchtower检查升级
     privoce/vocechat-server:latest
 ```
 上面-v 命令的作用是：把用户数据映射到 vocechat-data 卷，没有的话就新建
