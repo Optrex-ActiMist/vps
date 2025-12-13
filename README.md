@@ -103,15 +103,6 @@ searxng/searxng
 ```
   **之后在 Nginx Proxy Manager 里把 search.domain.com 反代到 8088端口即可**
 
-### 11. deep-research-u14 
-```
-docker run -d \
-    --restart=unless-stopped \
-    -p 3333:3000 \
-    --name deep-research \
-    xiangfa/deep-research:latest
-```
-
 ### 12. deep-research-web  [https://github.com/AnotiaWang/deep-research-web-ui]
 ```
 docker run -d \
@@ -119,14 +110,6 @@ docker run -d \
     -p 3000:3000 \
     --name deep-research-web \
     anotia/deep-research-web:latest
-```
-### 13. Kresearch [https://github.com/KuekHaoYang/KResearch]
-```
-sudo apt-get update && sudo apt-get install -y qemu-user-static
-sudo systemctl enable --now systemd-binfmt.service
-sudo systemctl status systemd-binfmt.service
-sudo systemctl enable --now binfmt-support.service
-docker run --platform linux/arm64 -d --restart=unless-stopped -p 8081:80 --name kresearch kuekhaoyang/kresearch:latest
 ```
 
 ### 14. 订阅管理 [https://github.com/huhusmang/Subscription-Management]
@@ -195,38 +178,6 @@ NOTIFICATION_DEFAULT_REPEAT_NOTIFICATION=false
 # IMAGE_TAG=latest
 ```
 4. Start services：
-```
-docker compose up -d
-```
-
-### 15. Stirling-PDF
-1. 创建目录
-```````
-mkdir ~/stirlingpdf
-cd ~/stirlingpdf
-```
-2. 用编辑器创建 docker-compose.yml
-```
-nano docker-compose.yml
-```
-3. 粘贴以下内容到编辑器里(修改外部端口号以避免冲突)：
-```
-services:
-  stirling-pdf:
-    image: docker.stirlingpdf.com/stirlingtools/stirling-pdf:latest
-    ports:
-      - '8082:8080'
-    volumes:
-      - ./StirlingPDF/trainingData:/usr/share/tessdata # Required for extra OCR languages
-      - ./StirlingPDF/extraConfigs:/configs
-      - ./StirlingPDF/customFiles:/customFiles/
-      - ./StirlingPDF/logs:/logs/
-      - ./StirlingPDF/pipeline:/pipeline/
-    environment:
-      - DISABLE_ADDITIONAL_FEATURES=false
-      - LANGS=en_GB
-```
-4. 后台启动 docker
 ```
 docker compose up -d
 ```
